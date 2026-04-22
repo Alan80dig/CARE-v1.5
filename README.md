@@ -1,4 +1,4 @@
-# CARE v1.5 — Call AI for Report
+# CARE-v1.5 — Call AI for Report
 
 **Мост между диагностикой Windows и AI-ассистентами**
 
