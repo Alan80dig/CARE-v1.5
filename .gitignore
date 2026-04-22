@@ -1,0 +1,46 @@
+# PowerShell
+*.ps1.bak
+*.ps1.old
+*.ps1.temp
+*.psd1.bak
+*.psm1.bak
+*.ps1xml.bak
+
+# Modules
+packages/
+module/
+*.nupkg
+
+# Help
+*.help.txt
+
+# Generated files
+*.ps1.cache
+
+# Windows
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+*.exe
+*.dll
+*.msi
+
+# CARE specific
+CARE_Report_*.txt
+CARE_Results_*.csv
+C:\WindowsDiagnostics\*.txt
+
+# Logs
+*.log
+*.tmp
+*.temp
+
+# User config
+*.user
+*.suo
+*.userprefs
+
+# IDE
+.vscode/
+.idea/
+*.code-workspace
