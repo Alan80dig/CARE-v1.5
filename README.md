@@ -44,7 +44,7 @@
 
 | Главное окно | Пример отчёта |
 |--------------|---------------|
-| ![Главное окно](docs/screenshots/ProgramWindow6.png) | ![Здоровье](docs/screenshots/ProgramWindow4.png) |
+| ![Главное окно с отчетом](docs/screenshots/ProgramWindow6.png) | ![Здоровье](docs/screenshots/ProgramWindow4.png) |
 
 ---
 
