@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CARE-v1.5 — инструмент диагностики Windows с интеграцией AI. Собирает отчёт о системе за 1 клик.">
+    <meta name="keywords" content="Windows диагностика, PowerShell, AI отчет, системный анализ">
+    <title>CARE-v1.5 — AI-диагностика Windows</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: #e0e4ff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #00d4ff, #7b2ff7);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff, #00d4ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #a0a8d4;
+            margin-bottom: 2rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00d4ff, #7b2ff7);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0,212,255,0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,212,255,0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.1);
+            color: #e0e4ff;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 0.5rem;
+            color: #00d4ff;
+        }
+
+        /* Info section */
+        .info-section {
+            background: rgba(0,0,0,0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 4px solid #00d4ff;
+        }
+
+        .warning {
+            background: rgba(255,100,100,0.1);
+            border-left: 4px solid #ff6464;
+        }
+
+        code {
+            background: #0a0e27;
+            padding: 0.2rem 0.5rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            color: #00d4ff;
+        }
+
+        pre {
+            background: #0a0e27;
+            padding: 1rem;
+            border-radius: 12px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .container { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="badge">⚡ PowerShell • Open Source • AI-Ready</div>
+            <h1>CARE-v1.5</h1>
+            <div class="subtitle">
+                Мост между диагностикой Windows и AI-ассистентами<br>
+                <strong>Call AI for Report</strong>
+            </div>
+            <div class="btn-group">
+                <a href="#download" class="btn btn-primary">📥 Скачать CARE-v1.5.ps1</a>
+                <a href="https://github.com/YOUR_USERNAME/CARE-v1.5" class="btn btn-secondary">🐙 GitHub</a>
+                <a href="#quickstart" class="btn btn-secondary">🚀 Быстрый старт</a>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Один клик — полный отчёт</h3>
+                <p>Сбор CPU, RAM, дисков, температуры, ошибок и статуса безопасности</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3>Оптимизирован для AI</h3>
+                <p>Экономит токены ChatGPT, Gemini, Claude и DeepSeek</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>Безопасность</h3>
+                <p>Анонимизация имён, путей и серийных номеров</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Оценка здоровья</h3>
+                <p>0–100 баллов с цветовой индикацией</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💾</div>
+                <h3>Все диски</h3>
+                <p>Авто-исключение ESP и Recovery-разделов</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌡️</div>
+                <h3>Температура CPU</h3>
+                <p>Мониторинг перегрева (если поддерживается)</p>
+            </div>
+        </div>
+
+        <!-- Quick Start -->
+        <div class="info-section" id="quickstart">
+            <h2>🚀 Быстрый старт</h2>
+            <p><strong>Требования:</strong> Windows 10/11 (64-bit), PowerShell 5.1+, права администратора</p>
+            <pre><code># 1. Скачай файл CARE-v1.5.ps1
+# 2. Нажми правой кнопкой → "Запустить с помощью PowerShell"
+# 3. Или через консоль администратора:
+powershell -ExecutionPolicy Bypass -File "C:\Tools\CARE\CARE-v1.5.ps1"</code></pre>
+        </div>
+
+        <!-- Security Warning -->
+        <div class="info-section warning">
+            <h2>⚠️ Важное замечание по безопасности</h2>
+            <p>Скрипт предназначен для <strong>личных компьютеров</strong>. На корпоративных машинах:</p>
+            <ul style="margin-left: 2rem; margin-top: 0.5rem;">
+                <li>Согласуйте запуск с IT-отделом</li>
+                <li>Соблюдайте политику информационной безопасности</li>
+                <li>Автор не несёт ответственности за использование в корпоративной среде</li>
+            </ul>
+        </div>
+
+        <!-- What it collects -->
+        <div class="info-section">
+            <h2>📋 Что собирает CARE-v1.5?</h2>
+            <ul style="margin-left: 2rem;">
+                <li>💻 Процессор, ОЗУ, версия Windows</li>
+                <li>💾 Все диски (кроме ESP/Recovery)</li>
+                <li>🌡️ Температуру процессора</li>
+                <li>📋 Критические ошибки, ошибки диска, WMI за 7 дней</li>
+                <li>🔧 Проблемные устройства и драйверы</li>
+                <li>⚙️ Остановленные службы</li>
+                <li>🛡️ Статус Защитника Windows</li>
+                <li>❤️ Оценку здоровья 0–100</li>
+            </ul>
+        </div>
+
+        <!-- Download -->
+        <div class="info-section" id="download" style="text-align: center;">
+            <h2>📥 Скачать CARE-v1.5</h2>
+            <p>Последняя версия — v1.5 (стабильный релиз)</p>
+            <div class="btn-group" style="margin-top: 1rem;">
+                <a href="#" class="btn btn-primary">⬇️ Скачать CARE-v1.5.ps1</a>
+                <a href="#" class="btn btn-secondary">📦 Все релизы</a>
+            </div>
+        </div>
+
+        <!-- Thanks -->
+        <div class="info-section" style="background: linear-gradient(135deg, rgba(0,212,255,0.1), rgba(123,47,247,0.1));">
+            <h2>🙏 Благодарность</h2>
+            <p>Этот инструмент никогда не появился бы без <strong>DeepSeek</strong> — команды, которая превратила код в диалог, а обучение — в искусство.</p>
+            <p style="margin-top: 1rem;">— С уважением, автор CARE-v1.5</p>
+        </div>
+
+        <!-- Support -->
+        <div class="footer">
+            <p>☕ <strong>Поддержать проект</strong> — если инструмент помог, угостите автора кофе через СБП</p>
+            <p style="font-size: 0.85rem; margin-top: 0.5rem;">© 2026 CARE-v1.5 | Open Source | Сделано с ❤️ для сообщества</p>
+        </div>
+    </div>
+</body>
+</html>
