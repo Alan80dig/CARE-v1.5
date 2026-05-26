@@ -140,6 +140,56 @@
             border-left: 4px solid #ff6464;
         }
 
+        /* Coffee buttons */
+        .btn-coffee {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            background: linear-gradient(135deg, #00A651, #008540);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0,166,81,0.3);
+        }
+
+        .btn-coffee:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,166,81,0.4);
+            filter: brightness(1.05);
+        }
+
+        /* Floating coffee button */
+        .coffee-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 1000;
+        }
+
+        .coffee-float a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #00A651, #008540);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .coffee-float a:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0,166,81,0.4);
+        }
+
         code {
             background: #0a0e27;
             padding: 0.2rem 0.5rem;
@@ -166,6 +216,8 @@
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
             .container { padding: 1rem; }
+            .btn-coffee { padding: 10px 20px; font-size: 0.95rem; }
+            .coffee-float a { padding: 8px 16px; font-size: 0.85rem; }
         }
     </style>
 </head>
@@ -181,7 +233,7 @@
             </div>
             <div class="btn-group">
                 <a href="#download" class="btn btn-primary">📥 Скачать CARE-v1.5.ps1</a>
-                <a href="https://github.com/YOUR_USERNAME/CARE-v1.5" class="btn btn-secondary">🐙 GitHub</a>
+                <a href="https://github.com/Alan80dig/CARE-v1.5" class="btn btn-secondary">🐙 GitHub</a>
                 <a href="#quickstart" class="btn btn-secondary">🚀 Быстрый старт</a>
             </div>
         </div>
@@ -266,6 +318,26 @@ powershell -ExecutionPolicy Bypass -File "C:\Tools\CARE\CARE-v1.5.ps1"</code></p
             </div>
         </div>
 
+        <!-- Support Section with SBP only -->
+        <div class="info-section" style="text-align: center; background: linear-gradient(135deg, rgba(0,166,81,0.1), rgba(0,133,64,0.05)); border-left-color: #00A651;">
+            <h2>☕ Поддержать проект</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 1rem;">
+                CARE создан с душой и бесплатен для всех.<br>
+                Если инструмент помог — угостите автора чашечкой кофе ☕
+            </p>
+            
+            <div style="margin: 1.5rem 0;">
+                <a href="#" class="btn-coffee">
+                    🇷🇺 Поддержать через СБП
+                </a>
+            </div>
+            
+            <p style="font-size: 0.85rem; opacity: 0.8; max-width: 500px; margin: 0 auto;">
+                ⚡ Спонсорство не даёт привилегий и не ускоряет разработку.<br>
+                Но оно даёт понять, что моя работа нужна людям. 🙏
+            </p>
+        </div>
+
         <!-- Thanks -->
         <div class="info-section" style="background: linear-gradient(135deg, rgba(0,212,255,0.1), rgba(123,47,247,0.1));">
             <h2>🙏 Благодарность</h2>
@@ -273,11 +345,17 @@ powershell -ExecutionPolicy Bypass -File "C:\Tools\CARE\CARE-v1.5.ps1"</code></p
             <p style="margin-top: 1rem;">— С уважением, автор CARE-v1.5</p>
         </div>
 
-        <!-- Support -->
+        <!-- Footer -->
         <div class="footer">
-            <p>☕ <strong>Поддержать проект</strong> — если инструмент помог, угостите автора кофе через СБП</p>
-            <p style="font-size: 0.85rem; margin-top: 0.5rem;">© 2026 CARE-v1.5 | Open Source | Сделано с ❤️ для сообщества</p>
+            <p>© 2026 CARE-v1.5 | Open Source | Сделано с ❤️ для сообщества</p>
         </div>
+    </div>
+
+    <!-- Floating coffee button -->
+    <div class="coffee-float">
+        <a href="https://www.sberbank.ru/ru/choise_bank?requisiteNumber=79287034952&bankCode=100000000111">
+            ☕ Угостить кофе
+        </a>
     </div>
 </body>
 </html>
