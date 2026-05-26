@@ -1,0 +1,14 @@
+# robots.txt для CARE-v1.5
+User-agent: *
+Allow: /
+
+# Указываем путь к sitemap
+Sitemap: https://alan80dig.github.io/CARE-v1.5/sitemap.xml
+
+# Запрещаем индексировать служебные папки (если они есть)
+Disallow: /docs/
+Disallow: /assets/
+Disallow: /scripts/
+
+# Хост (опционально, для некоторых поисковых систем)
+Host: https://alan80dig.github.io/CARE-v1.5
